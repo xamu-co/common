@@ -1,0 +1,37 @@
+{
+   "compilerOptions": {
+      "module": "ESNext",
+      "target": "ES2015",
+      "declaration": true,
+      "moduleResolution": "Node",
+      "esModuleInterop": true,
+      "allowJs": true,
+      "isolatedModules": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "baseUrl": ".",
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true,
+      "outDir": "./lib/esm",
+      "rootDir": "src",
+      "lib": [
+         "ESNext",
+         "ESNext.AsyncIterable",
+         "DOM"
+      ],
+      "typeRoots": [
+         "types",
+         "node_modules/@types"
+      ],
+      "types": [
+         "@types/node"
+      ]
+   },
+   "include": [
+      "./src/**/*"
+   ],
+   "exclude": [
+      "node_modules",
+      "lib"
+   ]
+}

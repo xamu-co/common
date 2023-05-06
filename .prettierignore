@@ -1,0 +1,8 @@
+lib/
+node_modules/
+.yarn/
+*.json
+*.svg
+.eslintrc
+.babelrc
+CHANGELOG.md

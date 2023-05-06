@@ -1,0 +1,82 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"requireConfigFile": false,
+		"sourceType": "module",
+		"allowImportExportEverywhere": false,
+		"ecmaVersion": 2018,
+		"ecmaFeatures": {
+			"globalReturn": false
+		}
+	},
+	"env": {
+		"node": true,
+		"browser": true
+	},
+	"extends": [
+		"eslint:recommended"
+	],
+	"plugins": [
+		"@typescript-eslint",
+		"prettier"
+	],
+	"rules": {
+		"curly": [
+			"error",
+			"multi-line"
+		],
+		"quotes": [
+			"error",
+			"double",
+			{
+				"allowTemplateLiterals": true,
+				"avoidEscape": true
+			}
+		],
+		"eqeqeq": [
+			"error",
+			"smart"
+		],
+		"unicorn/number-literal-case": "off",
+		"no-tabs": "off",
+		"comma-dangle": "off",
+		"semi": "off",
+		"arrow-parens": "off",
+		"space-before-function-paren": "off",
+		"indent": "off",
+		"no-extra-boolean-cast": "off",
+		"no-mixed-spaces-and-tabs": [
+			"warn",
+			"smart-tabs"
+		],
+		"spaced-comment": "off",
+		"no-use-before-define": "off",
+		"@typescript-eslint/no-use-before-define": [
+			"error"
+		],
+		"no-dupe-class-members": "off",
+		"@typescript-eslint/no-dupe-class-members": [
+			"error"
+		],
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": [
+			"warn"
+		],
+		"no-redeclare": "off",
+		"import/no-named-as-default": "off",
+		"@typescript-eslint/no-redeclare": [
+			"error"
+		],
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto",
+				"usePrettierrc": true
+			}
+		]
+	},
+	"globals": {
+		"$": "writable"
+	}
+}

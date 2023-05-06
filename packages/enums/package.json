@@ -1,0 +1,50 @@
+{
+  "name": "@open-xamu-co/common-enums",
+  "version": "0.0.1",
+  "description": "Xamu shared enums",
+  "author": "@xamu-co",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "node": {
+        "module": "./lib/esm/index.js",
+        "require": "./lib/index.js",
+        "import": "./wrapper.mjs"
+      },
+      "default": "./lib/esm/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "module": "./lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xamu-co/shared.git"
+  },
+  "keywords": [
+    "ts",
+    "js",
+    "enum"
+  ],
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/xamu-co/shared/issues"
+  },
+  "homepage": "https://github.com/xamu-co/shared#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build:esm": "tsc",
+    "build:cjs": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "build": "rimraf lib && npm run build:esm && npm run build:cjs",
+    "prepare": "npm run build"
+  },
+  "browserslist": [
+    "last 2 versions, > 0.5%, ie >= 11"
+  ]
+}

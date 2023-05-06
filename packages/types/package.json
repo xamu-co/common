@@ -1,0 +1,39 @@
+{
+  "name": "@open-xamu-co/common-types",
+  "version": "0.0.1",
+  "description": "Xamu shared types",
+  "author": "@xamu-co",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xamu-co/shared.git"
+  },
+  "keywords": [
+    "ts",
+    "js",
+    "types"
+  ],
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/xamu-co/shared/issues"
+  },
+  "homepage": "https://github.com/xamu-co/shared#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-common-types": "^6.4.0",
+    "@open-xamu-co/common-enums": "*"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
