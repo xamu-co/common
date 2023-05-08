@@ -1,3 +1,25 @@
+import type { iSelectOption } from "@open-xamu-co/common-types";
+
+/**
+ * create iSelectOption from compatible values
+ */
+export function toSelectOption<T extends iSelectOption = any>(
+	option: string | number | T
+): iSelectOption | T {
+	if (typeof option === "object" && option !== null) return option;
+	return { value: option };
+}
+
+/**
+ * Cast data to array or keep as it is
+ *
+ * @param value arrayLike
+ * @returns {array}
+ */
+export function toArray<T>(value: T) {
+	return Array.isArray(value) ? value : [value];
+}
+
 /**
  * Retorna el numero dado con formato de puntos de mil
  *
@@ -30,14 +52,4 @@ export function objectFromError(err: any) {
 		}
 	}
 	return parsedError;
-}
-
-/**
- * Cast data to array or keep as it is
- *
- * @param value arrayLike
- * @returns {array}
- */
-export function toArray<T>(value: T) {
-	return Array.isArray(value) ? value : [value];
 }

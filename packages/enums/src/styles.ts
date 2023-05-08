@@ -21,7 +21,7 @@ export const eThemeColors = {
 	SECONDARY_COMPLEMENT: "secondaryComplement",
 	DANGER: "danger",
 	SUCCESS: "success",
-} as const;
+};
 
 /**
  * Base colors
@@ -32,7 +32,7 @@ export const eThemeColors = {
 export const eBaseColors = {
 	LIGHT: "light",
 	DARK: "dark",
-} as const;
+};
 
 /**
  * Base colors
@@ -43,4 +43,4 @@ export const eBaseColors = {
 export const eColors = {
 	...eThemeColors,
 	...eBaseColors,
-} as const;
+};

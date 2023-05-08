@@ -1,23 +1,7 @@
 import { eFormFactoryType as eType } from "@open-xamu-co/common-enums";
-import type {
-	iFormFactoryInput,
-	iFormValues,
-	iInvalidInput,
-	iSelectOption,
-} from "@open-xamu-co/common-types";
+import type { iFormFactoryInput, iFormValues, iInvalidInput } from "@open-xamu-co/common-types";
 
-import { isEmail } from "./validation";
-
-export function notEmptyValue(value: any): boolean {
-	if (Array.isArray(value) && value.length > 0) return value.every(notEmptyValue);
-	if (
-		(!value && value !== false && value !== 0) ||
-		(Array.isArray(value) && value.length === 0)
-	) {
-		return false;
-	}
-	return true;
-}
+import { isEmail, notEmptyValue } from "./validation";
 
 /**
  * check if single formFactoryInput value from values is valid
@@ -181,14 +165,4 @@ export function getFormFactoryValues<V extends Record<string, any> = Record<stri
 		values,
 		invalidInputs: invalidInputs.filter(({ name }) => values[name] !== undefined),
 	};
-}
-
-/**
- * create iSelectOption from compatible values
- */
-export function toSelectOption<T extends iSelectOption = any>(
-	option: string | number | T
-): iSelectOption | T {
-	if (typeof option === "object" && option !== null) return option;
-	return { value: option };
 }
