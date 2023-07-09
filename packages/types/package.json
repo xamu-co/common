@@ -10,18 +10,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xamu-co/shared.git"
+    "url": "git+https://github.com/xamu-co/common.git"
   },
   "keywords": [
     "ts",
     "js",
     "types"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xamu-co/shared/issues"
+    "url": "https://github.com/xamu-co/common/issues"
   },
-  "homepage": "https://github.com/xamu-co/shared#readme",
+  "homepage": "https://github.com/xamu-co/common#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

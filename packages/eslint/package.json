@@ -1,0 +1,25 @@
+{
+  "name": "@open-xamu-co/eslint-config",
+  "version": "0.0.1",
+  "description": "Xamu shared eslint config",
+  "main": "index.js",
+  "repository": "git+https://github.com/xamu-co/common.git",
+  "author": "@xamu-co",
+  "license": "MIT",
+  "scripts": {
+    "build": "node -e \"console.log('Build step not required')\""
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": ">=5"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=5",
+    "eslint": ">=3",
+    "eslint-config-prettier": ">=8",
+    "eslint-import-resolver-typescript": ">=3",
+    "eslint-plugin-import": ">=2",
+    "eslint-plugin-prettier": ">=3",
+    "prettier": ">=2",
+    "typescript": ">=5"
+  }
+}

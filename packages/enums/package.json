@@ -23,18 +23,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xamu-co/shared.git"
+    "url": "git+https://github.com/xamu-co/common.git"
   },
   "keywords": [
     "ts",
     "js",
     "enum"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xamu-co/shared/issues"
+    "url": "https://github.com/xamu-co/common/issues"
   },
-  "homepage": "https://github.com/xamu-co/shared#readme",
+  "homepage": "https://github.com/xamu-co/common#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -44,7 +44,13 @@
     "build": "rimraf lib && npm run build:esm && npm run build:cjs",
     "prepare": "npm run build"
   },
+  "devDependencies": {
+    "@babel/cli": "^7.22.6",
+    "@babel/core": "^7.22.8",
+    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-typescript": "^7.22.5"
+  },
   "browserslist": [
-    "last 2 versions, > 0.5%, ie >= 11"
+    "defaults"
   ]
 }

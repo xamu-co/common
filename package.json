@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "Shared dependencies for the xamu app",
   "author": "@open-xamu-co",
-  "private": true,
   "workspaces": [
+    "packages/eslint",
     "packages/enums",
     "packages/types",
     "packages/helpers"
   ],
+  "private": true,
   "scripts": {
     "i": "yarn --frozen-lockfile",
     "lint:eslint": "eslint --ext .ts,.js --ignore-path .gitignore .",
@@ -17,6 +18,7 @@
     "p:helpers": "yarn workspace @open-xamu-co/common-helpers",
     "p:enums": "yarn workspace @open-xamu-co/common-enums",
     "p:types": "yarn workspace @open-xamu-co/common-types",
+    "p:eslint": "yarn workspace @open-xamu-co/eslint-config",
     "build": "yarn workspaces run build",
     "release": "yarn workspaces run semantic-release",
     "release:dry": "yarn workspaces run semantic-release --dry-run"
@@ -26,10 +28,6 @@
     "yarn": ">=1.22.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "@babel/preset-typescript": "^7.15.0",
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@semantic-release/changelog": "^5.0.1",
@@ -39,6 +37,8 @@
     "@typescript-eslint/parser": "^5.39.0",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^3.3.1",
     "husky": "4.3.0",
     "lint-staged": "^10.2.11",
@@ -46,7 +46,7 @@
     "rimraf": "^3.0.2",
     "semantic-release": "^17.1.1",
     "semantic-release-monorepo": "^7.0.5",
-    "typescript": "^4.2.3"
+    "typescript": "^5.1.6"
   },
   "lint-staged": {
     "*.{ts,js}": [
@@ -57,15 +57,12 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn check --integrity && lint-staged"
     }
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  }
 }
